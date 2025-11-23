@@ -18,33 +18,36 @@ struct BaseView: View {
     var body: some View {
 
         TabView {
-
             NavigationView {
                 HomeView(path: $path)
 
             }
             .tabItem {
-                Image(systemName: "house.fill")
-               // Text("Home")
+                Image(systemName: "house.fill").renderingMode(.template)
+                // Text("Home")
             }
             NavigationView {
                 ExploreView(path: $path)
             }
             .tabItem {
                 Image(systemName: "mosaic.fill")
+                    .renderingMode(.template)
                     .environment(\.layoutDirection, .rightToLeft)
-               // Text("Explore")
+                // Text("Explore")
             }
 
             NavigationView {
                 SettingsView(path: $path)
             }
             .tabItem {
-                Image(systemName: "gearshape.fill")
-              //  Text("Settings")
+                Image(systemName: "gearshape.fill").renderingMode(.template)
+                //  Text("Settings")
             }
 
         }
+        .accentColor(Color(hex:0xff409B9B))
+
+        .accessibilityIdentifier("baseTabView")
         .toolbarColorScheme(themeViewModel.colorScheme, for: .bottomBar)
         .environment(\.colorScheme, themeViewModel.colorScheme)
 

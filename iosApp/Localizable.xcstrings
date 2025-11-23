@@ -12,6 +12,9 @@
         }
       }
     },
+    "Account Privacy" : {
+
+    },
     "account_description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -77,6 +80,9 @@
         }
       }
     },
+    "Comments" : {
+
+    },
     "Content" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -115,10 +121,20 @@
         }
       }
     },
+    "emailField" : {
+
+    },
+    "Explore" : {
+
+    },
+    "Feed type" : {
+
+    },
     "Get Started" : {
 
     },
     "Home" : {
+      "extractionState" : "stale",
       "localizations" : {
         "pt-BR" : {
           "stringUnit" : {
@@ -140,6 +156,9 @@
           }
         }
       }
+    },
+    "loginBtnLabel" : {
+
     },
     "Logout" : {
       "extractionState" : "manual",
@@ -209,6 +228,9 @@
         }
       }
     },
+    "passwordField" : {
+
+    },
     "Privacy" : {
       "extractionState" : "manual"
     },
@@ -228,6 +250,12 @@
           }
         }
       }
+    },
+    "Public" : {
+
+    },
+    "Restricted" : {
+
     },
     "Settings" : {
       "localizations" : {
@@ -314,6 +342,9 @@
           }
         }
       }
+    },
+    "Timeline" : {
+
     },
     "Type something" : {
 

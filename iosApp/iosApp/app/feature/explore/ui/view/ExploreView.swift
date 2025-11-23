@@ -10,6 +10,7 @@ import Shared
 struct ExploreView: View {
     @Binding var path: NavigationPath
     @State private var searchText: String = ""
+    @ObservedObject private var themeViewModel = ThemeViewModel()
 
     var body: some View {
         VStack {
@@ -45,5 +46,7 @@ struct ExploreView: View {
 
         }
         .background(Color(hex: 0xff151218))
+        .toolbarBackground(.visible, for: .tabBar)
+        .toolbarBackground(themeViewModel.colorScheme == .light ? Color.white : Color(hex: 0xff151218), for: .tabBar)
     }
 }

@@ -41,7 +41,9 @@ struct LoginView: View {
                 ZStack {
                     HStack {
                         TextField("vou comer seu lulu", text: $loginString)
-                            .foregroundColor(Color(hex: 0xff787878, alpha: 0.95))
+                            .foregroundColor(Color(hex: 0xff787878, alpha: 0.95)).foregroundColor(Color(hex: 0xff787878, alpha: 0.95))
+                            .accessibilityLabel("emailField")
+                            .accessibilityIdentifier("emailField")
                     }
                     .edgesIgnoringSafeArea(.trailing)
                     .padding(.horizontal, 10)
@@ -52,6 +54,7 @@ struct LoginView: View {
                 .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.clear, lineWidth: 1))
 
                 // .overlay(<#T##style: ShapeStyle##ShapeStyle#>)
+
                 HStack {
                     ZStack {
                         TextField("Type your password", text: $passwordString)
@@ -66,6 +69,8 @@ struct LoginView: View {
                             .foregroundColor(Color(hex: 0xff787878, alpha: 0.95))
 
                     }
+                    .accessibilityLabel("passwordField")
+                    .accessibilityIdentifier("passwordField")
                     Button {
                         isVisible.toggle()
                     } label: {
@@ -73,6 +78,8 @@ struct LoginView: View {
                             .foregroundColor(isVisible ? .blue : Color(hex: 0xff787878, alpha: 0.95))
 
                     }
+                    .accessibilityLabel("loginBtnLabel")
+                    .accessibilityIdentifier("loginBtn")
 
 
                 }
@@ -114,6 +121,8 @@ struct LoginView: View {
             Spacer().frame(height: 20)
 
         }
+        .accessibilityLabel("loginView")
+        .accessibilityIdentifier("loginView")
 
         .colorScheme(themeViewModel.colorScheme)
         // .navigationBarTitle("Login")

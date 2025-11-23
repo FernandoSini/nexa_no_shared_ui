@@ -3,8 +3,12 @@ import SwiftUI
 @main
 struct iOSApp: App {
     init(){
-        loadRocketSimConnect()
+
+      if ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] == nil {
+          loadRocketSimConnect()
+      }
     }
+
 
     var body: some Scene {
         WindowGroup {

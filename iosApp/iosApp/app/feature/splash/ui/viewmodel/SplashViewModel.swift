@@ -19,21 +19,22 @@ class SplashViewModel: ObservableObject {
     }
 
     func getUserInfo(forceRefresh: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
             Task {
                 do {
                     self.isLoading = true
                     self.user = try await self.userUseCase.getUser()
                     if let user = self.user, user != nil {
-                        print(user.name)
+                       AppSecurity().teste(userEntity:user)
                     }
                     self.isLoading = false
                     print(self.isLoading)
                 } catch {
                     self.user = nil
                     self.isLoading = false
+
                     //  throw MyError(errorDescription: "Houve um erro", failureReason: nil)
-                    self.currentError = MyError(errorDescription: "Houve um erro", failureReason: nil)
+                    self.currentError = MyError(errorDescription: error.localizedDescription, failureReason: nil)
                 }
             }
         }

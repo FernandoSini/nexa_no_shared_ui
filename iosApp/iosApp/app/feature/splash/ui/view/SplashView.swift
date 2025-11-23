@@ -28,9 +28,10 @@ struct SplashView: View {
 
                 if !splashViewModel.isLoading {
                     ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: .gray))
+                        .progressViewStyle(CircularProgressViewStyle(tint: Color(hex:0xff409B9B)))
                         .padding()
                         .animation(.easeInOut(duration: 5), value: UUID())
+                        .accessibilityIdentifier("loadingIndicator")
                 }
 
             }
